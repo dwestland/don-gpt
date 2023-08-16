@@ -24,22 +24,22 @@ export default function Chat() {
           .map((m, index) => (
             <li key={index} className="py-4">
               {m.role === 'user' ? 'User: ' : 'DonGPT: '}
-              <span className="whitespace-pre-line">{m.content}</span>
+              <span className="text-xl whitespace-pre-line">{m.content}</span>
             </li>
           ))}
       </ul>
 
-      <form onSubmit={handleSubmit} className="flex gap-4">
+      <form onSubmit={handleSubmit} className="flex gap-4 p-8">
         <input
           spellCheck="true"
-          className="dark:bg-slate-800 w-full border rounded-xl border-slate/50 py-2 px-4"
+          className="w-full px-4 py-2 border border-gray-400 rounded-xl"
           type="text"
           placeholder="Say something..."
           value={input}
           onChange={handleInputChange}
         />
         <button
-          className="bg-indigo-500 text-white font-semibold shadow rounded-full px-4 disabled:bg-slate-400"
+          className="px-4 font-semibold text-white bg-indigo-500 rounded-full shadow disabled:bg-slate-400"
           type="submit"
         >
           Send
